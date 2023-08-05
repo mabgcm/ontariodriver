@@ -1,0 +1,186 @@
+/* Feature Card ---------------------------------- */
+.line-icon {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    transition: 0.4s ease-in-out;
+    position: relative;
+    z-index: 2;
+    img {
+        transition: 0.4s ease-in-out;
+    }
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        transition: 0.4s ease-in-out;
+    }
+    &:before {
+        background-color: $smoke-color2;
+        clip-path: path("M13.3881 76.4603C4.65737 67.4651 0.294678 56.9287 0.294678 44.8461C0.294678 36.791 2.54587 29.3421 7.04826 22.4942C11.5453 15.6463 17.4822 10.278 24.8483 6.38399C32.209 2.49515 39.9834 0.548157 48.1661 0.548157C60.1689 0.548157 70.3234 4.44728 78.6512 12.2301C86.9683 20.0181 91.1322 30.4928 91.1322 43.6388C91.1322 56.528 86.834 67.4702 78.2429 76.4603C69.6465 85.4606 58.9385 89.9557 46.1245 89.9557C33.031 89.9557 22.1135 85.4606 13.3881 76.4603Z");
+        inset: 4px;
+    }
+    &:after {
+        mask-image: url('../img/theme-img/feature_card_circle.svg');
+        animation: spin 10s linear infinite;
+        mask-size: 100% 100%;
+        background-color: $theme-color2;
+    }
+} 
+.feature-card {
+    padding: 35px 30px;
+    background-color: $theme-color;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $white-color;
+        border: 1px solid $border-color;
+        border-radius: inherit;
+        z-index: -1;
+        transition: 0.4s ease-in-out;
+    }
+    .box-title2 {
+        transition: 0.4s ease-in-out;
+    }
+    &_text {
+        max-width: 300px;
+        transition: 0.4s ease-in-out;
+        margin: 0 auto 14px auto;
+    }
+    .line-btn {
+        color: $title-color;
+        &:before {
+            background-color: $title-color;
+        }
+    }
+    &:hover {
+        &:before {
+            height: 0;
+            border-color: transparent;
+        }
+        .box-title2 {
+            color: $white-color;
+        }
+        .line-btn {
+            color: $white-color;
+            &:before {
+                background-color: $white-color;
+            }
+        }
+        .line-icon {
+            img {
+                filter: brightness(0) invert(1);
+            }
+            &:before {
+                background-color: $title-color;
+            }
+            &:after {
+                filter: brightness(0) invert(1);
+            }
+        }
+        .feature-card {
+            &_text {
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.feature-sec1 {
+    background-size: 100% 250px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: linear-gradient(to left, $smoke-color, $smoke-color);
+}
+
+
+/* Feature Box ---------------------------------- */
+.feature-box {
+    padding: 38px;
+    border: 1px solid $border-color;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    transition: 0.4s ease-in-out;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background-color: $theme-color;
+        transition: 0.4s ease-in-out;
+        z-index: -1;
+    }
+    .line-icon {
+        width: 95px;
+        height: 95px;
+        line-height: 95px;
+        margin-bottom: 10px;
+        &:before {
+            clip-path: path("M12.5183 72.3869C4.22412 63.8415 0.0795898 53.832 0.0795898 42.3535C0.0795898 34.7012 2.21821 27.6248 6.49546 21.1194C10.7676 14.6139 16.4076 9.51403 23.4054 5.81476C30.398 2.12038 37.7836 0.270752 45.5572 0.270752C56.9598 0.270752 66.6065 3.9749 74.5179 11.3685C82.419 18.7671 86.3747 28.718 86.3747 41.2067C86.3747 53.4513 82.2915 63.8463 74.13 72.3869C65.9634 80.9371 55.7909 85.2074 43.6176 85.2074C31.1789 85.2074 20.8074 80.9371 12.5183 72.3869Z");
+        }
+    }
+    .box-title2 {
+        transition: 0.4s ease-in-out;
+    }
+    &_text {
+        margin-bottom: 15px;
+        transition: 0.4s ease-in-out;
+    }
+    &:hover {
+        border-color: $theme-color;
+        &:before {
+            width: 100%;
+            left: 0;
+            right: unset;
+        }
+        .box-title2 {
+            color: $white-color;
+        }
+        .line-icon {
+            &:before {
+                background-color: transparent;
+            }
+        }
+        .line-btn {
+            color: $white-color;
+            &:before {
+                background-color: $white-color;
+            }
+        }
+        .feature-box {
+            &_text {
+                color: $white-color;
+            }
+        }
+    }
+}
+.feature-sec2 {
+    background-color: $title-color;
+    margin-top: -350px;
+    padding-top: 350px;
+}
+
+@include xl {
+    .feature-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}

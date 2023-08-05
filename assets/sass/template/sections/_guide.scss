@@ -1,0 +1,184 @@
+/* Guideline ---------------------------------- */
+.guide-map {
+    text-align: center;
+}
+.guide-map-phone {
+    display: none;
+}
+.guide-feature {
+    display: inline-flex;
+    gap: 20px;
+    position: absolute;
+    .box-title2 {
+        margin-bottom: 3px;
+    }
+    &_text {
+        font-size: 14px;
+        margin-bottom: -0.5em;
+        max-width: 300px;
+    }
+    &.right-align {
+        text-align: right;
+        flex-direction: row-reverse;
+    }
+}
+
+.guideline-area {
+    position: relative;
+    margin-bottom: 85px;
+    .one {
+        top: 7%;
+        left: 3%;
+    }
+    .two {
+        top: 38%;
+        left: -4%;
+    }
+    .three {
+        bottom: 10%;
+        left: -2%;
+    }
+    .four {
+        bottom: -25%;
+        left: 5%;
+    }
+    .five {
+        top: 18%;
+        right: 0.5%;
+    }
+    .six {
+        top: 49%;
+        right: 0.5%;
+    }
+    .seven {
+        bottom: 0%;
+        right: 1.5%;
+    }
+    .eight {
+        bottom: -25%;
+        left: 47%;
+    }
+}
+
+@include lg {
+    .guide-map img {
+        transform: scalex(0.65);
+    }
+    .guide-feature {
+        max-width: 350px;
+        // &_text {
+        //     max-width: 190px;
+        // }
+        &.right-align {
+            margin-left: -30px;
+            
+        }
+        &.left-align {
+            margin-right: -40px;
+        }
+    }
+}
+
+@include md {
+    .guide-map {
+        display: none;
+    }
+    .guide-map-phone {
+        display: block;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 30px;
+        img {
+            border: 3px dashed $theme-color;
+            padding: 16px;
+            border-radius: 50%;
+            background-color: $white-color;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 50%;
+            height: 20px;
+            border-top: 3px dashed $theme-color;
+            border-left: 3px dashed $theme-color;
+            border-radius: 15px 0 0 0;
+            z-index: -1;
+        }
+    }
+    .guide-feature {
+        position: relative;
+        inset: 0 !important;
+        display: flex;
+        max-width: 100%;
+        margin: 0 0 35px 160px !important;
+        &:last-child {
+            margin-bottom: 0 !important; 
+        }
+        &.right-align {
+            flex-direction: row;
+            text-align: left;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: calc(100% + 30px);
+            width: 130px;
+            border-top: 3px dashed $theme-color;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 17px;
+            right: calc(100% + 30px);
+            width: 8px;
+            height: 8px;
+            background-color: $theme-color;
+            border-radius: 50%;
+        }
+        &_icon {
+            width: 50px;
+            text-align: center;
+        }
+    }
+    .guideline-area {
+        margin-bottom: 0;
+        &:before {
+            content: '';
+            height: calc(100% - 152px);
+            width: 0;
+            border-left: 3px dashed $theme-color;
+            position: absolute;
+            top: 152px;
+            left: 0;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: -3px;
+            width: 9px;
+            height: 9px;
+            background-color: $theme-color;
+            border-radius: 50%;
+        }
+    }
+}
+
+@include xs {
+    .guide-feature {
+        margin: 0 0 35px 50px !important;
+        &:last-child {
+            margin-bottom: 0 !important; 
+        }
+        &:before {
+            width: 20px;
+        }
+        &:after {
+            right: calc(100% + 20px);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+/* Brand 1 ---------------------------------- */
+.brand-box {
+    text-align: center;
+    filter: grayscale(1);
+    transition: 0.4s ease-in-out;
+    &:hover {
+        filter: none;
+    }
+}
